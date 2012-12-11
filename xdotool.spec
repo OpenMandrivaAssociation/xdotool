@@ -1,6 +1,6 @@
 %define name	xdotool
 %define version	2.20101012.3049
-%define release	%mkrel 1
+%define release	2
 %define major 2
 %define libname %mklibname %{name} %{major}
 %define develname %mklibname %{name} -d
@@ -13,9 +13,9 @@ Group:		Toys
 License:	GPL
 URL:		http://www.semicomplete.com/projects/xdotool
 Source:     http://semicomplete.googlecode.com/files/xdotool-%{version}.tar.gz
-BuildRequires:  libx11-devel
-BuildRequires:  libxtst-devel
-BuildRoot:      %{_tmppath}/%{name}-%{version}
+BuildRequires:  pkgconfig(x11)
+BuildRequires:  pkgconfig(xtst)
+BuildRequires:  pkgconfig(xi)
 
 %description
 This tool lets you simulate keyboard input and mouse activity, move and resize
@@ -50,14 +50,10 @@ This package contains development files for %{name}.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std \
     PREFIX=%{_prefix} \
     INSTALLMAN=%{_datadir}/man \
     INSTALLLIB=%{_libdir}
-
-%clean
-rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
@@ -72,4 +68,11 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %{_libdir}/libxdo.so
 %{_includedir}/xdo.h
+
+
+
+%changelog
+* Mon Feb 28 2011 Guillaume Rousse <guillomovitch@mandriva.org> 2.20101012.3049-1mdv2011.0
++ Revision: 640974
+- import xdotool
 
