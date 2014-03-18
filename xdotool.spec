@@ -1,13 +1,10 @@
-%define name	xdotool
-%define version	2.20101012.3049
-%define release	2
 %define major 2
 %define libname %mklibname %{name} %{major}
 %define develname %mklibname %{name} -d
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		xdotool
+Version:	2.20101012.3049
+Release:	3
 Summary:	fake keyboard/mouse input, window management, and more
 Group:		Toys
 License:	GPL
@@ -56,23 +53,12 @@ This package contains development files for %{name}.
     INSTALLLIB=%{_libdir}
 
 %files
-%defattr(-,root,root)
 %{_bindir}/xdotool
 %{_mandir}/man1/xdotool.1*
 
 %files -n %{libname}
-%defattr(-,root,root)
 %{_libdir}/libxdo.so.%{major}
 
 %files -n %{develname}
-%defattr(-,root,root)
 %{_libdir}/libxdo.so
 %{_includedir}/xdo.h
-
-
-
-%changelog
-* Mon Feb 28 2011 Guillaume Rousse <guillomovitch@mandriva.org> 2.20101012.3049-1mdv2011.0
-+ Revision: 640974
-- import xdotool
-
