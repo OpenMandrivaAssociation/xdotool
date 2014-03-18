@@ -2,6 +2,8 @@
 %define libname %mklibname %{name} %{major}
 %define develname %mklibname %{name} -d
 
+%define debug_package %{nil}
+
 Name:		xdotool
 Version:	2.20101012.3049
 Release:	3
