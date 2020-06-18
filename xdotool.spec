@@ -1,20 +1,22 @@
-%define major 2
+%define major 3
 %define libname %mklibname %{name} %{major}
 %define develname %mklibname %{name} -d
 
 %define debug_package %{nil}
 
 Name:		xdotool
-Version:	2.20101012.3049
-Release:	4
+Version:	3.20200618.1
+Release:	1
 Summary:	fake keyboard/mouse input, window management, and more
 Group:		Toys
 License:	GPL
 URL:		http://www.semicomplete.com/projects/xdotool
-Source:     http://semicomplete.googlecode.com/files/xdotool-%{version}.tar.gz
+Source:		https://github.com/jordansissel/xdotool/archive/master/%{name}-%{version}.tar.gz
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xtst)
 BuildRequires:  pkgconfig(xi)
+BuildRequires:	pkgconfig(xinerama)
+BuildRequires:	pkgconfig(xkbcommon)
 
 %description
 This tool lets you simulate keyboard input and mouse activity, move and resize
@@ -37,19 +39,19 @@ This package contains libraries for %{name}.
 Summary:	Development files for %{name}
 Group:		Development/C
 Requires:	%{libname} = %{version}
-Provides:   %{name}-devel = %{version}-%{release}
+Provides:	%{name}-devel = %{version}-%{release}
 
 %description -n	%{develname}
 This package contains development files for %{name}.
 
 %prep
-%setup -q
+%autosetup -p1 -n %{name}-master
 
 %build
-%make
+%make_build CFLAGS="%{optflags}" LDFLAGS="%{optflags}"
 
 %install
-%makeinstall_std \
+%make_install \
     PREFIX=%{_prefix} \
     INSTALLMAN=%{_datadir}/man \
     INSTALLLIB=%{_libdir}
