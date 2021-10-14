@@ -65,4 +65,5 @@ This package contains development files for %{name}.
 
 %files -n %{develname}
 %{_libdir}/libxdo.so
+%{_libdir}/pkgconfig/libxdo.pc
 %{_includedir}/xdo.h
