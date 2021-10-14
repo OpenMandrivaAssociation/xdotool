@@ -2,10 +2,10 @@
 %define libname %mklibname %{name} %{major}
 %define develname %mklibname %{name} -d
 
-%define debug_package %{nil}
+%define _empty_manifest_terminate_build 0
 
 Name:		xdotool
-Version:	3.20200618.1
+Version:	3.20210903.1
 Release:	1
 Summary:	fake keyboard/mouse input, window management, and more
 Group:		Toys
