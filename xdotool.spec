@@ -45,7 +45,7 @@ Provides:	%{name}-devel = %{version}-%{release}
 This package contains development files for %{name}.
 
 %prep
-%autosetup -p1 -n %{name}-master
+%autosetup -p1 -n %{name}-%{version}
 
 %build
 %make_build CFLAGS="%{optflags}" LDFLAGS="%{optflags}"
