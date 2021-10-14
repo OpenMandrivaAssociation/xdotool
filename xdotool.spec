@@ -2,10 +2,10 @@
 %define libname %mklibname %{name} %{major}
 %define develname %mklibname %{name} -d
 
-%define debug_package %{nil}
+%define _empty_manifest_terminate_build 0
 
 Name:		xdotool
-Version:	3.20200618.1
+Version:	3.20210903.1
 Release:	1
 Summary:	fake keyboard/mouse input, window management, and more
 Group:		Toys
@@ -45,7 +45,7 @@ Provides:	%{name}-devel = %{version}-%{release}
 This package contains development files for %{name}.
 
 %prep
-%autosetup -p1 -n %{name}-master
+%autosetup -p1 -n %{name}-%{version}
 
 %build
 %make_build CFLAGS="%{optflags}" LDFLAGS="%{optflags}"
@@ -65,4 +65,5 @@ This package contains development files for %{name}.
 
 %files -n %{develname}
 %{_libdir}/libxdo.so
+%{_libdir}/pkgconfig/libxdo.pc
 %{_includedir}/xdo.h
