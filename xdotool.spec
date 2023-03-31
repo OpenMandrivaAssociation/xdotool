@@ -6,7 +6,7 @@
 
 Name:		xdotool
 Version:	3.20211022.1
-Release:	1
+Release:	2
 Summary:	fake keyboard/mouse input, window management, and more
 Group:		Toys
 License:	GPL
