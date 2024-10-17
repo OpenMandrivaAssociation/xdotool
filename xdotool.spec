@@ -10,7 +10,7 @@ Release:	2
 Summary:	fake keyboard/mouse input, window management, and more
 Group:		Toys
 License:	GPL
-URL:		http://www.semicomplete.com/projects/xdotool
+URL:		https://www.semicomplete.com/projects/xdotool
 Source:		https://github.com/jordansissel/xdotool/archive/master/%{name}-%{version}.tar.gz
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xtst)
