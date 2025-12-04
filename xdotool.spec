@@ -5,8 +5,8 @@
 %define _empty_manifest_terminate_build 0
 
 Name:		xdotool
-Version:	3.20211022.1
-Release:	2
+Version:	4.20251130.1
+Release:	1
 Summary:	fake keyboard/mouse input, window management, and more
 Group:		Toys
 License:	GPL
