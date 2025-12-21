@@ -12,6 +12,7 @@ Group:		Toys
 License:	GPL
 URL:		https://www.semicomplete.com/projects/xdotool
 Source:		https://github.com/jordansissel/xdotool/archive/master/%{name}-%{version}.tar.gz
+BuildRequires:	make
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xtst)
 BuildRequires:  pkgconfig(xi)
