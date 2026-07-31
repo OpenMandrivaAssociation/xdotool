@@ -5,7 +5,7 @@
 %define _empty_manifest_terminate_build 0
 
 Name:		xdotool
-Version:	4.20251130.1
+Version:	4.20260303.1
 Release:	1
 Summary:	fake keyboard/mouse input, window management, and more
 Group:		Toys
@@ -46,7 +46,7 @@ Provides:	%{name}-devel = %{version}-%{release}
 This package contains development files for %{name}.
 
 %prep
-%autosetup -p1 -n %{name}-%{version}
+%autosetup -p1 -n xdotool-main
 
 %build
 %make_build CFLAGS="%{optflags}" LDFLAGS="%{optflags}"
